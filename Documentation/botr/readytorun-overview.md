@@ -43,7 +43,7 @@ Looking carefully at the CLI file format shows that it is really 'not that bad' 
 - Immediate support for _all_ features of the runtime (at least for files that include complete CLI within them)
 - The option to only add the 'most important' data required to support fast, direct execution. Everything else can be left in CLI format and use the CLI code paths. This is quite valuable given our desire to be minimalist in augmenting the format.
  
-Moreover there is an 'obvious' way of extending the CIL file to include the additional data we need. A CLI file has a well-defined header structure, and that header already has a field that can point of to 'additional information'. This is used today in NGEN images. We would use this same technique to allow the existing CLI format to include a new 'Native Header' that would then point at any additional information needed to support fast, direct execution. 
+Moreover there is an 'obvious' way of extending the CLI file to include the additional data we need. A CLI file has a well-defined header structure, and that header already has a field that can point of to 'additional information'. This is used today in NGEN images. We would use this same technique to allow the existing CLI format to include a new 'Native Header' that would then point at any additional information needed to support fast, direct execution. 
 
 The most important parts of this extra information include:
 
